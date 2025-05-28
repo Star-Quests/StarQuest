@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarQuest Auditions | Payment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Star<span>Quest</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="apply.html">Apply</a></li>
+                    <li><a href="payment.html" class="active">Payment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Payment Information</h1>
+                <p>Complete your registration with the $25 application fee</p>
+            </div>
+        </section>
+
+        <section class="payment-section">
+            <div class="container">
+                <div class="payment-method">
+                    <h2>Bitcoin Payment</h2>
+                    <div class="payment-details">
+                        <p>Send exactly $25 USD worth of Bitcoin to the following address:</p>
+                        
+                        <div class="bitcoin-info">
+                            <div class="qr-code">
+                                <img src="assets/bitcoin-qr.png" alt="Bitcoin QR Code">
+                                <p>Scan to pay</p>
+                            </div>
+                            <div class="address-info">
+                                <div class="crypto-address">
+                                    <code id="btc-address">bc1q20akp265qemjcdwewflzs7yxmsnna5hv55pzh9</code>
+                                    <button class="copy-btn" data-target="btc-address">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="bitcoin-note">Current BTC/USD rate: <span id="btc-rate">Loading...</span></p>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-verification">
+                            <h3>Verify Your Payment</h3>
+                            <p>After making your payment, enter your transaction ID below to verify:</p>
+                            
+                            <div class="verification-input">
+                                <input type="text" id="tx-id" placeholder="Enter Bitcoin Transaction ID" required>
+                                <button id="verify-payment" class="btn">Verify Payment</button>
+                            </div>
+                            
+                            <div id="payment-status" class="status-message"></div>
+                        </div>
+                        
+                        <div class="payment-instructions">
+                            <h4>Payment Instructions:</h4>
+                            <ol>
+                                <li>Send exactly $25 USD worth of Bitcoin to the address above</li>
+                                <li>After sending, enter your transaction ID and click "Verify Payment"</li>
+                                <li>Once verified, your application will be complete</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
