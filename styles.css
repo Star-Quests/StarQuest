@@ -1,0 +1,879 @@
+:root {
+    --primary-color: #6c5ce7;
+    --primary-dark: #5649c0;
+    --secondary-color: #00cec9;
+    --text-color: #f5f6fa;
+    --text-muted: #b2bec3;
+    --bg-dark: #1e272e;
+    --bg-darker: #161d22;
+    --bg-light: #2d3436;
+    --border-color: #3d484d;
+    --success-color: #00b894;
+    --error-color: #d63031;
+    --warning-color: #fdcb6e;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-darker);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--bg-dark);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 5px;
+}
+
+#theme-toggle:hover {
+    color: var(--primary-color);
+    transform: rotate(20deg);
+}
+
+/* Hero Sections */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(30, 39, 46, 0.8), rgba(22, 29, 34, 0.9)), url('assets/hero-image.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.page-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(30, 39, 46, 0.8), rgba(22, 29, 34, 0.9)), url('assets/page-hero.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content, .page-hero .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2, .page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.hero p, .page-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-muted);
+}
+
+.quote {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin: 20px 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 12px 30px;
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Highlight Section */
+.highlight-section {
+    padding: 80px 0;
+}
+
+.highlight-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.highlight-image {
+    width: 50%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.highlight-text {
+    width: 50%;
+    padding: 40px;
+}
+
+.highlight-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--bg-dark);
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-buttons {
+    margin-top: 30px;
+}
+
+/* About Page Styles */
+.about-section {
+    padding: 80px 0;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text h3 {
+    font-size: 1.5rem;
+    margin: 30px 0 15px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.features-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.features-list i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.process-section {
+    margin-top: 60px;
+}
+
+.process-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    transition: var(--transition);
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.step h3 {
+    margin: 15px 0 10px;
+    color: var(--primary-color);
+}
+
+/* Apply Page Styles */
+.apply-section {
+    padding: 80px 0;
+}
+
+#registration-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+input[type="file"] {
+    padding: 10px;
+}
+
+.form-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+}
+
+/* Payment Page Styles */
+.payment-section {
+    padding: 80px 0;
+}
+
+.payment-method {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.payment-method h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.payment-details {
+    margin-top: 20px;
+}
+
+.bitcoin-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-code img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    background: white;
+}
+
+.qr-code p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.address-info {
+    flex: 1;
+}
+
+.crypto-address {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-dark);
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.crypto-address code {
+    flex: 1;
+    word-break: break-all;
+    font-family: monospace;
+}
+
+.copy-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.copy-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.bitcoin-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.payment-verification {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+}
+
+.payment-verification h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.verification-input {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.verification-input input {
+    flex: 1;
+}
+
+.payment-instructions {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.payment-instructions h4 {
+    margin-bottom: 15px;
+}
+
+.payment-instructions ol {
+    padding-left: 20px;
+}
+
+.payment-instructions li {
+    margin-bottom: 10px;
+}
+
+.status-message {
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.status-message.processing {
+    background-color: rgba(253, 203, 110, 0.2);
+    color: var(--warning-color);
+}
+
+.status-message.success {
+    background-color: rgba(0, 184, 148, 0.2);
+    color: var(--success-color);
+}
+
+.status-message.error {
+    background-color: rgba(214, 48, 49, 0.2);
+    color: var(--error-color);
+}
+
+/* Contact Page Styles */
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-methods {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.contact-method {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.contact-method i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-method h3 {
+    margin-bottom: 15px;
+}
+
+.email-address a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.email-address a:hover {
+    text-decoration: underline;
+}
+
+.contact-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.contact-form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--bg-dark);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-brand .logo {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-links h3 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-info h3 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    --text-color: #2d3436;
+    --text-muted: #636e72;
+    --bg-dark: #f5f6fa;
+    --bg-darker: #dfe6e9;
+    --bg-light: #ffffff;
+    --border-color: #dfe6e9;
+}
+
+body.light-mode .dark-bg {
+    background-color: var(--bg-darker);
+}
+
+body.light-mode .quote-box,
+body.light-mode .payment-method,
+body.light-mode .contact-method,
+body.light-mode .payment-note,
+body.light-mode .contact-note,
+body.light-mode #registration-form,
+body.light-mode .payment-verification,
+body.light-mode .highlight-card,
+body.light-mode .step,
+body.light-mode .contact-form-container,
+body.light-mode .payment-instructions {
+    background-color: var(--bg-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea {
+    background-color: var(--bg-dark);
+}
+
+body.light-mode .crypto-address,
+body.light-mode .venmo-info {
+    background-color: var(--bg-dark);
+}
+
+body.light-mode .status-message.processing {
+    background-color: rgba(253, 203, 110, 0.3);
+}
+
+body.light-mode .status-message.success {
+    background-color: rgba(0, 184, 148, 0.3);
+}
+
+body.light-mode .status-message.error {
+    background-color: rgba(214, 48, 49, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h2, .page-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .highlight-card {
+        flex-direction: column;
+    }
+
+    .highlight-image, .highlight-text {
+        width: 100%;
+    }
+
+    .highlight-image {
+        height: 300px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .form-row, .verification-input {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .bitcoin-info {
+        flex-direction: column;
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2, .page-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    #registration-form, .contact-form-container {
+        padding: 20px;
+    }
+
+    .step {
+        min-width: 100%;
+    }
+}
+
+/* Add this at the end of the existing styles.css, before media queries */
+
+/* Payment Message Styles */
+.payment-message {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--bg-light);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.payment-message h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.payment-message p {
+    margin-bottom: 25px;
+}
